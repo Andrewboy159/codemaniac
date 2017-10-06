@@ -15,9 +15,9 @@
             <h1>Thank you for registering!</h1>
         </div>
         <div class="text-center">
-            <h3>We are excited to have you on our coding text and video tutorials forum!</h3>
+            <h3>We are excited to have you on our coding forum and video course site!</h3>
             <br>
-            <h3>We hope to see posting and asking questions often!</h3>
+            <h3>We hope to see posting often!</h3>
         </div>
     </body>
 </html>
