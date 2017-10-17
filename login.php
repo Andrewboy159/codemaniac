@@ -16,8 +16,6 @@
 	        $boxMsgClass = "alert-danger";
 	        exit;
 	    }
-	    //No need for else block becuase if check fails the script gets exited.
-	    //Therefore this code is safe to input
 	    require("inc/database.php");
 
 	    if(!$conn) {
@@ -67,8 +65,8 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo $password; ?>">
                 </div>
                 <div class="form-group">
+									<a name="back" class="btn btn-default" href="<?php echo ROOT_URL; ?>">Back</a>
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
-                    <a name="back" class="btn btn-default" href="<?php echo ROOT_URL; ?>">Back</a>
                 </div>
             </form>
         </div>

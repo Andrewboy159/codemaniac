@@ -7,51 +7,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Home</title>
-		<style>
-			body {
-				background-image: url("images/background-image.png");
-				background-size: cover;
-				color: #002BFF;
-				font-family: Lucida Sans Unicode;
-			}
-			p {
-				margin-top: 40px;
-				margin-bottom: 40px;
-				font-size: 25px;
-			}
-			.semi-trans-top{
-				opacity: 0.625;
-				background: rgba(76,76,76,0.65);
-				height: 675px;
-				margin-top: 0px;
-			}
-			.semi-trans-bottom{
-				opacity: 0.625;
-				background: rgba(76,76,76,0.65);
-				height: 150px;
-				margin-top: 0px;
-			}
-			a {
-				color: #002BFF;
-			}
-			a:link {
-				color: #002BFF;
-			}
-			a:visited {
-				color: #002BFF;
-			}
-			a:hover {
-				cursor: pointer;
-				color: #002BFF;
-			}
-			a:active {
-				background-color: #002BFF;
-				color: #FFFFFF;
-			}
-		</style>
     </head>
-
     <body>
 	<div class="semi-trans-top">
 		<br><br><br><br><br><br><br><br>
@@ -73,10 +31,9 @@
 		<p class="text-center">As this is a community site, almost every course will be made by<br>
 		users like you. But there will be some made by us to give the users an idea of how to make them.<br>
 		Wether they be made by users or us, all topics will fall into what's called a Branch. Branches are essentially<br>
-		paths to take in the specified language(s). Any Branchs can go off the original course and lead to more<br>
-		specific topics. Here is a visual reference:<br><br>
+		paths to take in the specified language(s). Any Branches can go off the original course and lead to more<br>
+		specific topics.<br><br>
 		</p>
-		<img src="/images/diagram.png" style="display: block; margin: 0 auto; width: 75%; height:75%;">
     </body>
 </html>
 <?php

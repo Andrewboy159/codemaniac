@@ -1,0 +1,40 @@
+body {
+				background-image: url("images/background-image.png");
+				background-size: cover;
+				color: #002BFF;
+				font-family: Lucida Sans Unicode;
+			}
+			p {
+				margin-top: 40px;
+				margin-bottom: 40px;
+				font-size: 25px;
+			}
+			.semi-trans-top{
+				opacity: 0.625;
+				background: rgba(76,76,76,0.65);
+				height: 675px;
+				margin-top: 0px;
+			}
+			.semi-trans-bottom{
+				opacity: 0.625;
+				background: rgba(76,76,76,0.65);
+				height: 150px;
+				margin-top: 0px;
+			}
+			a {
+				color: #002BFF;
+			}
+			a:link {
+				color: #002BFF;
+			}
+			a:visited {
+				color: #002BFF;
+			}
+			a:hover {
+				cursor: pointer;
+				color: #002BFF;
+			}
+			a:active {
+				background-color: #002BFF;
+				color: #FFFFFF;
+			}
