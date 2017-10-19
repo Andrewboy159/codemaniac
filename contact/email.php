@@ -1,19 +1,44 @@
 <?php
-    include("inc/header.php");
-
-    $boxMsg = '';
-    $boxMsgClass = '';
-
-    if(empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['body'])) {
-      $boxMsg = 'Please fill in all fields!';
-      $boxMsgClass = "alert-danger";
-      exit;
-    }
+    include("../inc/header.php");
+    require("../class.phpmailer.php");
 
     $email = htmlspecialchars($_POST['email']);
     $subject = htmlspecialchars($_POST['subject']);
     $body = htmlspecialchars($_POST['body']);
 
+    if(!isset($_POST['email']) || !isset($_POST['subject']) || !isset($_POST['body'])) {
+      echo 'Error: Fill in all fields';
+    }
+
+    $emailBody = '<<<EOT
+						<!DOCTYPE html>
+
+						<html>
+							<body style="font-family: Verdana; text-decoration: none;">
+								<div style="text-align: center; color: #002BFF; margin: auto; background-color: #D4D4D4; padding: 6px; width: 65%; border-style: solid; border-color: #8B8B8B;">
+									<h1>Code Maniac</h1>
+                  <br><br>
+                  <h3>You have submitted a suport ticket to out support team!</h3>
+								</div>
+							</body>
+						</html>EOT;';
+
+					$mail = new PHPMailer;
+					$mail->setFrom('support@codemaniac.tk', 'Code Maniac Support');
+
+					if(!$mail->ValidateAddress($email)) {
+						echo 'Error: Invalid Email Address';
+					} else {
+						$mail->addAddress($email);
+						$mail->isHTML(true);
+						$mail->Subject = 'Registration';
+						$mail->Body = $emailBody;
+						if(!$mail->send()) {
+							echo 'Error: Failed to send';
+						} else {
+							echo 'Success! You have sent a support ticket! Check your inbox shortly!';
+						}
+          }
 
 ?>
 
@@ -23,7 +48,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Email Support</title>
   </head>
   <style media="screen">
@@ -33,13 +57,13 @@
   </style>
   <body>
     <div class="container">
-      <form class="form-horizontal" method="post">
+      <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>"method="post">
         <fieldset>
           <legend>Support Ticket</legend>
           <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="example@example.com">
+              <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="example@example.com" value="<?php echo $email; ?>">
             </div>
           </div>
           <div class="form-group">
@@ -67,5 +91,5 @@
 </html>
 
 <?php
-	include("inc/footer.html");
+	include("../inc/footer.html");
 ?>

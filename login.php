@@ -3,7 +3,7 @@
 	//Pressed login
 	if(isset($_POST['login'])) {
 	    //Define empty message vars
-	    $boxMsg = '';
+			$boxMsg = '';
 	    $boxMsgClass = '';
 
 	    //Set field vars
